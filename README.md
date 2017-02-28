@@ -30,5 +30,6 @@ Your IAM instance profile must allow the following as a minimum:
 
 ## Excuses
 
-The script requires OpenSSL to generate a private/public keypair. This typically doesn't exist on Windows instances, so a binary is downloaded and installed in the Windows temp directory ($env:temp), this could certainly be done smarter.
+The script requires OpenSSL to generate a private/public keypair.
+OpenSSL typically doesn't exist on Windows instances, so a binary is downloaded and installed in the Windows temp directory ($env:temp), this could certainly be done smarter.
 
