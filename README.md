@@ -27,8 +27,11 @@ Your IAM instance profile must allow the following as a minimum:
         ]
     }
 
+## Usage
 
-## Excuses
+Wrap the script in &lt;powershell>&lt;/powershell> tags and add it to userdata when launching an instance, either from the AWS console, an autoscaling launch configuration or cloudformation.
+
+### Excuses
 
 The script requires OpenSSL to generate a private/public keypair.
 OpenSSL typically doesn't exist on Windows instances, so a binary is downloaded and installed in the Windows temp directory ($env:temp), this could certainly be done smarter.
