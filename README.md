@@ -1,4 +1,4 @@
-# opsworks-unattended-associate-powershell
+# Adding Nodes Automatically in AWS OpsWorks for Chef Automate
 Associate a new instance with a chef server from AWS userdata.
 
 
