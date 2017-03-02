@@ -1,7 +1,6 @@
 # Adding Nodes Automatically in AWS OpsWorks for Chef Automate
 Associate a new instance with a chef server from AWS userdata.
 
-
 Powershell version of the script provided at http://docs.aws.amazon.com/opsworks/latest/userguide/opscm-unattend-assoc.html
 
 This script allows you to automatically add nodes to AWS OpsWorks for Chef Automate. Simply provide it as userdata to an AWS instance and launch the instance.
@@ -27,8 +26,13 @@ Your IAM instance profile must allow the following as a minimum:
         ]
     }
 
+## Usage
 
-## Excuses
+Wrap the script in &lt;powershell>&lt;/powershell> tags and add it to userdata when launching an instance, either from the AWS console, an autoscaling launch configuration or cloudformation.
+There is a bit more info about the script here: https://cze.dk/bootstrapping-windows-ec2-instances-with-chef-for-autoscaling-groups/
 
-The script requires OpenSSL to generate a private/public keypair. This typically doesn't exist on Windows instances, so a binary is downloaded and installed in the Windows temp directory ($env:temp), this could certainly be done smarter.
+### Excuses
+
+The script requires OpenSSL to generate a private/public keypair.
+OpenSSL typically doesn't exist on Windows instances, so a binary is downloaded and installed in the Windows temp directory ($env:temp), this could certainly be done smarter.
 

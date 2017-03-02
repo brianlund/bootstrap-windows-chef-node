@@ -35,8 +35,6 @@ function Install-OpenSSL
   (New-Object System.Net.WebClient).DownloadFile($opensslURI, "$opensslinst")
   Sleep 2
   iex $openssl
-  Write-Output "ran $openssl"
-  echo "`$LastExitCode=$LastExitCode and `$?=$?"
 }
 
 function Associate-Node ($instanceId)
