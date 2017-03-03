@@ -100,12 +100,12 @@ Write-ChefConfig
 # Reload PATH so we can find chef-client
 $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
 
-# launch the chef client 
+# launch the chef client
 if ($nodeEnvironment)
 {
-  chef-client -r $runList -E $nodeEnvironment
+  chef-client -r "$runList" -E "$nodeEnvironment"
 }
 else
 {
-    chef-client -r $runList
+    chef-client -r "$runList"
 }
