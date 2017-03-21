@@ -31,6 +31,13 @@ Your IAM instance profile must allow the following as a minimum:
 Wrap the script in &lt;powershell>&lt;/powershell> tags and add it to userdata when launching an instance, either from the AWS console, an autoscaling launch configuration or cloudformation.
 There is a bit more info about the script here: https://cze.dk/bootstrapping-windows-ec2-instances-with-chef-for-autoscaling-groups/
 
+## Challenge in actually using it in userdata from anywhere but console
+
+Cloudformation unfortunately has some limitations on how long a string you can pass as userdata and if you base64 encode the script, it's too large.
+If you just paste it into a parameter field when launching a CF you need to add ; to the end of each line as it messes up formatting. I'm currently working on better options.
+
+
+
 ### Excuses
 
 The script requires OpenSSL to generate a private/public keypair.
