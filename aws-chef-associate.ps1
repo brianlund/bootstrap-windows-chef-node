@@ -16,7 +16,7 @@ $global:opensslURI          = "https://slproweb.com/download/Win32OpenSSL_Light-
 # Optional settings
 $chefOrganization="default"    # Leave as "default"; do not change. AWS OpsWorks for Chef Automate always creates the organization "default"
 $nodeEnvironment=""            # e.g. development, staging, onebox ...
-$chefClientVersion="12.16.42"  # latest if empty
+$chefClientVersion="stable"  # latest if empty
 
 # Recommended: upload the chef-client cookbook from the chef supermarket  https://supermarket.chef.io/cookbooks/chef-client
 # Use this to apply sensible default settings for your chef-client configuration like logrotate, and running as a service.
@@ -74,7 +74,7 @@ function Install-TrustedCert
 
 function Install-Chef
 {
-  . { iwr -useb https://omnitruck.chef.io/install.ps1 } | iex; install -channel current -project chef
+  . { iwr -useb https://omnitruck.chef.io/install.ps1 } | iex; install -channel $chefClientVersion -project chef
 }
 
 function Write-ChefConfig
