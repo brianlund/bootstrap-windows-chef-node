@@ -1,3 +1,5 @@
+UPDATE 2017-11-06: AWS now includes a userdata.ps1 script with their OpsWorks for Chef Automate starter_kit. You probably want to use that instead. The main difference in functionality is that they use the embedded openssl from chef - a much better solution (which I would have used if I knew it was included..)
+
 # Adding Nodes Automatically in AWS OpsWorks for Chef Automate
 Associate a new instance with a chef server from AWS userdata.
 
